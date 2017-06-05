@@ -64,6 +64,11 @@ passwd clouds
 visudo
 exit
 
+echo << _EOF_ >> ~/.ssh/config
+ServerAliveInterval 60
+ServerAliveCountMax 10
+_EOF_
+
 # https://wiki.archlinux.org/index.php/Xorg
 sudo pacman -S xorg-server xorg-xinit xorg-xinput
 sudo pacman -S xf86-video-fbdev xf86-video-intel
